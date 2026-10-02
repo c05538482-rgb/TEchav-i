@@ -107,3 +107,117 @@ body.modal-open{overflow:hidden}
 .store-dot.a101{color:#e30613;background:#e30613}.store-dot.bim{color:#e30613;background:#e30613}.store-dot.carrefoursa{color:#ef3340;background:#ef3340}.store-dot.flo{color:#e30613;background:#e30613}.store-dot.getir{color:#ffd21f;background:#ffd21f}.store-dot.hm{color:#e50010;background:#e50010}.store-dot.ikea{color:#0051ba;background:#0051ba}.store-dot.migros{color:#ff6b00;background:#ff6b00}.store-dot.watsons{color:#ee2a7b;background:#ee2a7b}
 @media(max-width:700px){.store-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.store-cards{grid-template-columns:1fr}}
+
+/* =========================================================
+   TECHAVI - Kullanıcının gönderdiği yerleşim eskizine göre
+   SADECE KONUM / YERLEŞİM DÜZENLEMESİ
+   Renkler, buton stilleri ve işlevler değiştirilmemiştir.
+   ========================================================= */
+@media (min-width:1001px){
+  header{
+    height:76px;
+    padding:0 2vw;
+    gap:18px;
+  }
+  header .logo{margin-right:4px}
+  header nav{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:2px;
+    flex:1 1 auto;
+  }
+  header .head-actions{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-left:auto;
+  }
+
+  main{
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 22px;
+    display:grid;
+    grid-template-columns:165px minmax(0,1fr);
+    grid-template-areas:
+      "hero hero"
+      "stores toolbar"
+      "stores usage"
+      "stores products"
+      "dashboard dashboard"
+      "cta cta";
+    column-gap:30px;
+    align-items:start;
+  }
+
+  .hero{
+    grid-area:hero;
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:30px 0 52px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 340px;
+    align-items:center;
+    gap:44px;
+  }
+  .hero-copy{
+    max-width:780px;
+    width:100%;
+    justify-self:center;
+    text-align:center;
+  }
+  .hero h1{margin-left:auto;margin-right:auto}
+  .hero p{margin-left:auto;margin-right:auto}
+  .hero .search-wrap{max-width:760px;margin-left:auto;margin-right:auto;text-align:left}
+  .hero .search-hint{text-align:center}
+  .radar-card{justify-self:end}
+
+  .store-cards{
+    grid-area:stores;
+    padding:0 0 25px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:165px;
+  }
+  .store-card{
+    width:100%;
+    min-height:58px;
+  }
+
+  .toolbar{
+    grid-area:toolbar;
+    padding:0 0 18px;
+    min-height:58px;
+    display:flex;
+    align-items:center;
+  }
+  .api-usage{
+    grid-area:usage;
+    margin:0 0 18px;
+  }
+  .grid{
+    grid-area:products;
+    padding:0;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .dashboard{
+    grid-area:dashboard;
+    width:min(760px,90%);
+    justify-self:center;
+    margin:70px 0 35px;
+  }
+  .cta{
+    grid-area:cta;
+    width:min(920px,94%);
+    justify-self:center;
+    margin:35px 0 80px;
+  }
+}
+
+@media (min-width:1250px){
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
